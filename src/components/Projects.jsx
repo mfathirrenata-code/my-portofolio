@@ -484,7 +484,7 @@ export default function Projects() {
 
       {/* --- MODAL (LIGHTBOX) DETAIL PROJECT --- */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center px-4 sm:px-6 py-10">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
 
           {/* Latar Belakang Gelap / Blur */}
           <div
@@ -493,18 +493,19 @@ export default function Projects() {
           ></div>
 
           {/* Konten Modal */}
-          <div className="relative bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl overflow-hidden animate-fade-in-up z-10 flex flex-col max-h-[90vh]">
+          {/* UBAH DISINI: max-h-[85vh] agar tidak mepet ujung browser HP */}
+          <div className="relative bg-white w-full max-w-3xl rounded-[1.5rem] md:rounded-[2rem] shadow-2xl overflow-hidden animate-fade-in-up z-10 flex flex-col max-h-[85vh] md:max-h-[90vh]">
 
-            {/* Tombol Close */}
+            {/* Tombol Close (Disesuaikan ukurannya untuk HP) */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/40 hover:bg-black/80 text-white backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300"
+              className="absolute top-3 right-3 md:top-4 md:right-4 z-20 w-8 h-8 md:w-10 md:h-10 bg-black/40 hover:bg-black/80 text-white backdrop-blur-md rounded-full flex items-center justify-center transition-all duration-300"
             >
               ✕
             </button>
 
             {/* Foto Preview di ATAS */}
-            <div className="w-full h-48 md:h-64 relative shrink-0 bg-gray-900 overflow-hidden">
+            <div className="w-full h-40 md:h-64 relative shrink-0 bg-gray-900 overflow-hidden">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -512,8 +513,8 @@ export default function Projects() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/10 to-transparent"></div>
 
-              <div className="absolute bottom-4 left-6 md:left-8 z-10">
-                <span className={`px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-md ${selectedProject.status === "Selesai" || selectedProject.status === "Completed"
+              <div className="absolute bottom-4 left-4 md:left-8 z-10">
+                <span className={`px-2 md:px-3 py-1 rounded-md text-[9px] md:text-[10px] font-bold uppercase tracking-wider shadow-md ${selectedProject.status === "Selesai" || selectedProject.status === "Completed"
                     ? "bg-green-500 text-white"
                     : "bg-orange-500 text-white"
                   }`}>
@@ -523,55 +524,55 @@ export default function Projects() {
             </div>
 
             {/* Detail di BAWAH */}
-            <div className="w-full p-6 md:p-8 flex flex-col overflow-y-auto bg-white custom-scrollbar">
+            <div className="w-full p-5 md:p-8 flex flex-col overflow-y-auto bg-white custom-scrollbar">
 
-              <div className="mb-6">
-                <p className="text-sm text-blue-600 font-bold mb-2 uppercase tracking-wider">{selectedProject.category}</p>
-                <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4 leading-tight">{selectedProject.title}</h3>
+              <div className="mb-5 md:mb-6">
+                <p className="text-xs md:text-sm text-blue-600 font-bold mb-1 md:mb-2 uppercase tracking-wider">{selectedProject.category}</p>
+                <h3 className="text-xl md:text-3xl font-black text-gray-900 mb-2 md:mb-4 leading-tight">{selectedProject.title}</h3>
               </div>
 
               {/* LOGIKA CONDITIONAL RENDERING: Tampilkan Case Study Jika Ada */}
               {selectedProject.caseStudy ? (
-                <div className="mb-8 space-y-8 border-b border-gray-100 pb-8">
+                <div className="mb-6 md:mb-8 space-y-6 md:space-y-8 border-b border-gray-100 pb-6 md:pb-8">
                   
                   {/* Deskripsi Pembuka */}
-                  <p className="text-gray-600 leading-relaxed text-sm md:text-base border-l-4 border-blue-500 pl-4 italic">
+                  <p className="text-gray-600 leading-relaxed text-sm border-l-4 border-blue-500 pl-3 md:pl-4 italic">
                     {selectedProject.desc}
                   </p>
 
                   {/* Problem & Solution Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-red-50/50 p-5 rounded-2xl border border-red-100">
-                      <h4 className="flex items-center gap-2 text-sm font-bold text-red-700 mb-3 uppercase tracking-wide">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    <div className="bg-red-50/50 p-4 md:p-5 rounded-2xl border border-red-100">
+                      <h4 className="flex items-center gap-2 text-xs md:text-sm font-bold text-red-700 mb-2 md:mb-3 uppercase tracking-wide">
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                         {t.lblProblem}
                       </h4>
-                      <p className="text-gray-700 text-sm leading-relaxed">{selectedProject.caseStudy.problem}</p>
+                      <p className="text-gray-700 text-xs md:text-sm leading-relaxed">{selectedProject.caseStudy.problem}</p>
                     </div>
                     
-                    <div className="bg-green-50/50 p-5 rounded-2xl border border-green-100">
-                      <h4 className="flex items-center gap-2 text-sm font-bold text-green-700 mb-3 uppercase tracking-wide">
+                    <div className="bg-green-50/50 p-4 md:p-5 rounded-2xl border border-green-100">
+                      <h4 className="flex items-center gap-2 text-xs md:text-sm font-bold text-green-700 mb-2 md:mb-3 uppercase tracking-wide">
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         {t.lblSolution}
                       </h4>
-                      <p className="text-gray-700 text-sm leading-relaxed">{selectedProject.caseStudy.solution}</p>
+                      <p className="text-gray-700 text-xs md:text-sm leading-relaxed">{selectedProject.caseStudy.solution}</p>
                     </div>
                   </div>
 
                   {/* Features List */}
                   <div>
-                    <h4 className="text-sm font-bold text-gray-900 mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
+                    <h4 className="text-xs md:text-sm font-bold text-gray-900 mb-3 md:mb-4 uppercase tracking-wide border-b border-gray-100 pb-2">
                       {t.lblFeatures}
                     </h4>
-                    <div className="grid grid-cols-1 gap-4">
+                    <div className="grid grid-cols-1 gap-2 md:gap-4">
                       {selectedProject.caseStudy.features.map((feature, idx) => (
-                        <div key={idx} className="flex gap-4 items-start p-3 hover:bg-gray-50 rounded-xl transition-colors">
-                          <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                        <div key={idx} className="flex gap-3 md:gap-4 items-start p-2 md:p-3 hover:bg-gray-50 rounded-xl transition-colors">
+                          <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold text-xs md:text-sm">
                             {idx + 1}
                           </div>
                           <div>
-                            <h5 className="font-bold text-gray-900 text-sm mb-1">{feature.title}</h5>
-                            <p className="text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
+                            <h5 className="font-bold text-gray-900 text-xs md:text-sm mb-1">{feature.title}</h5>
+                            <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{feature.desc}</p>
                           </div>
                         </div>
                       ))}
@@ -580,18 +581,17 @@ export default function Projects() {
 
                 </div>
               ) : (
-                // Jika tidak ada Case Study (Proyek Lain), tampilkan deskripsi biasa
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-8">
+                <p className="text-gray-600 leading-relaxed text-sm mb-6 md:mb-8">
                   {selectedProject.desc}
                 </p>
               )}
 
               {/* Tools & Technology (Bagian Bawah) */}
               <div className="mt-auto">
-                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Tools & Technology Used</h4>
-                <div className="flex flex-wrap gap-2">
+                <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3 md:mb-4">Tools & Technology Used</h4>
+                <div className="flex flex-wrap gap-1.5 md:gap-2">
                   {selectedProject.tech.map(tool => (
-                    <span key={tool} className="px-3 py-1.5 bg-gray-50 text-gray-700 text-xs font-bold rounded-lg border border-gray-200 transition-colors cursor-default">
+                    <span key={tool} className="px-2.5 py-1 md:px-3 md:py-1.5 bg-gray-50 text-gray-700 text-[10px] md:text-xs font-bold rounded-lg border border-gray-200 transition-colors cursor-default">
                       {tool}
                     </span>
                   ))}

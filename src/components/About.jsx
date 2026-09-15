@@ -103,30 +103,31 @@ export default function About() {
         {/* --- GRID BIDANG FOKUS --- */}
         <div className="w-full">
           <h4 className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">{t.core}</h4>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+          {/* UBAH BAGIAN INI SAJA: grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full px-4 md:px-0">
             
-            <div className="bg-gray-50 border border-gray-100 p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-white shadow-sm text-blue-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">💻</div>
-              <h4 className="font-bold text-gray-900 mb-2">Full Stack Developer</h4>
-              <p className="text-sm text-gray-500">React, Laravel, Node.js</p>
+            <div className="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-white shadow-sm text-blue-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mx-auto mb-4 md:mb-6">💻</div>
+              <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Full Stack Developer</h4>
+              <p className="text-xs md:text-sm text-gray-500">React, Laravel, Node.js</p>
             </div>
 
-            <div className="bg-gray-50 border border-gray-100 p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-white shadow-sm text-cyan-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">🎨</div>
-              <h4 className="font-bold text-gray-900 mb-2">UI/UX Design</h4>
-              <p className="text-sm text-gray-500">{t.descUI}</p>
+            <div className="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-2 transition-all duration-300">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-white shadow-sm text-cyan-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mx-auto mb-4 md:mb-6">🎨</div>
+              <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">UI/UX Design</h4>
+              <p className="text-xs md:text-sm text-gray-500">{t.descUI}</p>
             </div>
 
-            <div className="bg-gray-50 border border-gray-100 p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-white shadow-sm text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">🧊</div>
-              <h4 className="font-bold text-gray-900 mb-2">3D Modelling</h4>
-              <p className="text-sm text-gray-500">{t.desc3D}</p>
+            <div className="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-300">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-white shadow-sm text-indigo-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mx-auto mb-4 md:mb-6">🧊</div>
+              <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">3D Modelling</h4>
+              <p className="text-xs md:text-sm text-gray-500">{t.desc3D}</p>
             </div>
 
-            <div className="bg-gray-50 border border-gray-100 p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-white shadow-sm text-purple-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">🧠</div>
-              <h4 className="font-bold text-gray-900 mb-2">Android Developer</h4>
-              <p className="text-sm text-gray-500">{t.descAI}</p>
+            <div className="bg-gray-50 border border-gray-100 p-6 md:p-8 rounded-3xl text-center hover:bg-white hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-white shadow-sm text-purple-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mx-auto mb-4 md:mb-6">🧠</div>
+              <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Android Developer</h4>
+              <p className="text-xs md:text-sm text-gray-500">{t.descAI}</p>
             </div>
 
           </div>

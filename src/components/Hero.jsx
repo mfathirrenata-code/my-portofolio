@@ -3,17 +3,20 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
   const { lang } = useLanguage();
-  const ROLES = ["Fullstack Web Developer", "UI/UX Specialist", "3D Modeller", "Deep Learning Explorer"];
+  
+  // ROLES DIUPDATE: 4 Core utama (Full-Stack, Android, UI/UX, 3D)
+  const ROLES = ["Full-Stack Web Developer", "Android Developer", "UI/UX Specialist", "3D Modeller"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [ripples, setRipples] = useState([]);
 
+  // KONTEN DIUPDATE: Memasukkan Web, Android, UI/UX, dan 3D secara rapi
   const content = {
     en: {
-      bio: "An Informatics Engineering student at Politeknik Caltex Riau focused on designing modern web architectures, exploring 3D Modelling, and Deep Learning technologies.",
+      bio: "An Informatics Engineering student at Politeknik Caltex Riau focused on engineering scalable full-stack web applications, developing dynamic Android apps, crafting clean UI/UX designs, and exploring 3D modelling.",
       btn: "View Work"
     },
     id: {
-      bio: "Saya mahasiswa Teknik Informatika di Politeknik Caltex Riau. Berfokus merancang arsitektur web modern, hingga mengeksplorasi 3D Modelling dan teknologi Deep Learning.",
+      bio: "Mahasiswa Teknik Informatika di Politeknik Caltex Riau. Berfokus merancang aplikasi web full-stack yang tangguh, mengembangkan aplikasi Android dinamis, menciptakan desain UI/UX yang bersih, serta mengeksplorasi pemodelan 3D.",
       btn: "Lihat Karya"
     }
   };
@@ -101,7 +104,6 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-200 to-gray-100 rounded-[2.5rem] transform rotate-3 scale-105 -z-10"></div>
             <div className="relative w-full h-full bg-gray-200 rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl group">
               <img src="/profile.jpg" alt="Muhammad Fathir Renata" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out pointer-events-none" />
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium -z-10 bg-gray-100 text-center px-4">[Simpan profile.jpg di folder public]</div>
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 animate-bounce" style={{ animationDuration: '3s' }}><span className="text-2xl">🦁</span></div>
           </div>
