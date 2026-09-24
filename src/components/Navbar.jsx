@@ -51,6 +51,11 @@ export default function Navbar() {
 
   const isActive = (href) => href === `#${active}`;
 
+  // Fungsi untuk memanggil dialog PDF Browser
+  const handleDownloadPDF = () => {
+    window.print();
+  };
+
   return (
     <nav className={`fixed w-full top-0 z-50 px-4 md:px-6 transition-all duration-700 ease-in-out ${scrolled ? "pt-4" : "pt-6"}`}>
       <div
@@ -82,6 +87,20 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-3 shrink-0">
+          
+          {/* Tombol PDF (Hanya di PC/Tablet) */}
+          <button
+            onClick={handleDownloadPDF}
+            className={`hidden md:flex items-center justify-center gap-1 w-10 h-10 rounded-full text-red-500 transition-all duration-300 shadow-sm border ${
+              scrolled ? "bg-red-50 border-red-100 hover:bg-red-500 hover:text-white" : "bg-white/80 backdrop-blur-md border-red-100 hover:bg-red-500 hover:text-white"
+            }`}
+            title="Download PDF"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </button>
+
           {/* Tombol Toggle Bahasa */}
           <button
             onClick={() => setLang(lang === "en" ? "id" : "en")}
@@ -131,6 +150,21 @@ export default function Navbar() {
             </a>
           ))}
           <div className="w-full h-px bg-gray-100 my-2"></div>
+          
+          {/* Tombol PDF di Mobile */}
+          <button 
+            onClick={() => {
+              setMenuOpen(false);
+              setTimeout(() => handleDownloadPDF(), 300);
+            }}
+            className="flex items-center justify-center gap-2 bg-red-50 border border-red-100 text-red-600 rounded-full py-3 text-sm font-bold shadow-sm"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            {lang === "en" ? "Download PDF" : "Unduh PDF"}
+          </button>
+
           <a 
             href="mailto:mfathirrenata@gmail.com" 
             onClick={() => setMenuOpen(false)}

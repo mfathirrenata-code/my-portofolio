@@ -262,21 +262,21 @@ export default function Projects() {
         },
         {
           id: 3,
-          title: "Internship Management Web",
+          title: "Sistem Manajemen Magang",
           category: "Full-Stack Web",
-          status: "Completed",
+          status: "Selesai",
           image: "/proj-intern.jpg",
-          desc: "Worked as a Front-End Developer responsible for designing and implementing the user interface to ensure a highly responsive and user-friendly website for a university internship portal.",
+          desc: "Bekerja sebagai Front-End Developer yang bertanggung jawab merancang dan mengimplementasikan antarmuka pengguna untuk memastikan website portal magang kampus yang sangat responsif dan ramah pengguna.",
           tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
           caseStudy: {
-            problem: "The process of finding and validating student internship placements was highly unstructured. Information regarding available industry partners was scattered, and the approval workflow relied on manual communication, making it difficult for students to secure validated roles and for the Head of Program (Kaprodi) to monitor available vacancies.",
-            solution: "Developed a centralized, role-based Internship Management portal. The platform digitizes the entire pipeline: Lecturers can easily post available industry vacancies, the Head of Program can review and approve them in one click, and students can browse and apply for validated internships through a clean, intuitive interface.",
+            problem: "Proses pencarian dan validasi tempat magang mahasiswa sangat tidak terstruktur. Informasi mitra industri berserakan, dan alur persetujuan masih mengandalkan komunikasi manual. Hal ini menyulitkan mahasiswa untuk mendapatkan posisi yang valid dan menyulitkan Kepala Program Studi (Kaprodi) dalam memantau lowongan yang tersedia.",
+            solution: "Mengembangkan portal Manajemen Magang terpusat berbasis peran. Platform ini mendigitalisasi seluruh alur kerja: Dosen dapat mempublikasikan lowongan industri dengan mudah, Kaprodi dapat meninjau dan menyetujuinya dalam satu klik, dan mahasiswa dapat mencari serta melamar magang tervalidasi melalui antarmuka yang bersih dan intuitif.",
             features: [
-              { title: "Role-Based Dashboards", desc: "Designed distinct, tailored user interfaces for three main user roles: Students, Lecturers, and the Head of Program (Kaprodi)." },
-              { title: "Vacancy Submission System", desc: "A streamlined input form for Lecturers to register new internship opportunities from industry partners seamlessly." },
-              { title: "Centralized Approval Workflow", desc: "A secure validation mechanism allowing the Kaprodi to review, reject, or approve internship listings before they go live for students." },
-              { title: "Student Exploration Portal", desc: "An interactive and easy-to-navigate portal for students to discover approved vacancies, read requirements, and select their desired internship." },
-              { title: "Responsive Front-End Architecture", desc: "Built using HTML, CSS, JavaScript, and Bootstrap to guarantee a lightweight, mobile-friendly, and accessible user experience across all devices." }
+              { title: "Dashboard Berbasis Peran", desc: "Merancang antarmuka pengguna yang berbeda dan disesuaikan untuk tiga peran utama: Mahasiswa, Dosen, dan Kepala Program Studi (Kaprodi)." },
+              { title: "Sistem Pengajuan Lowongan", desc: "Formulir input yang disederhanakan bagi Dosen untuk mendaftarkan peluang magang baru dari mitra industri secara lancar." },
+              { title: "Alur Persetujuan Terpusat", desc: "Mekanisme validasi yang aman yang memungkinkan Kaprodi untuk meninjau, menolak, atau menyetujui daftar magang sebelum dipublikasikan kepada mahasiswa." },
+              { title: "Portal Eksplorasi Mahasiswa", desc: "Portal interaktif dan mudah dinavigasi bagi mahasiswa untuk menemukan lowongan yang disetujui, membaca persyaratan, dan memilih magang yang mereka inginkan." },
+              { title: "Arsitektur Front-End Responsif", desc: "Dibangun menggunakan HTML, CSS, JavaScript, dan Bootstrap untuk menjamin pengalaman pengguna yang ringan, ramah seluler, dan dapat diakses di semua perangkat." }
             ]
           }
         },
@@ -306,10 +306,8 @@ export default function Projects() {
           category: "Desain UI/UX",
           status: "Selesai",
           image: "/proj-uiux.jpg",
-          // desc digunakan untuk preview singkat di Card
           desc: "Membuat prototipe desain UI/UX dari konsep awal hingga mockup akhir, memastikan antarmuka yang intuitif, menarik, dan ramah pengguna untuk platform pendidikan.",
           tech: ["Figma", "Prototyping", "Wireframing", "User Research"],
-          // caseStudy digunakan untuk presentasi mendetail di dalam Modal
           caseStudy: {
             problem: "Kendala utama sistem pembelajaran saat ini adalah rendahnya keterlibatan pelajar, hambatan teknis yang dialami dosen maupun pelajar, serta sulitnya menyeimbangkan elemen hiburan (gamifikasi) dengan bobot kurikulum dan keragaman gaya belajar.",
             solution: "Menerapkan pendekatan pembelajaran berbasis gamifikasi yang inklusif dan adaptif. Mengubah proses belajar menjadi pengalaman interaktif dan kolaboratif, diiringi pendampingan teknis yang mudah dipahami, serta pengawasan ketat terpusat pada kurikulum.",
